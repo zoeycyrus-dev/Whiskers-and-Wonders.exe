@@ -1,0 +1,123 @@
+// Whiskers & Wonders
+
+let clicks = 0;
+
+const adoptButtons = document.querySelectorAll(".adopt");
+const footer = document.querySelector("footer");
+const title = document.querySelector("h1");
+const subtitle = document.querySelector(".subtitle");
+const kittens = document.querySelectorAll(".kitten");
+const safeMode = document.getElementById("safeMode");
+
+let safe = true;
+
+safeMode.addEventListener("click", () => {
+
+    safe = !safe;
+
+    if (safe) {
+        document.body.classList.remove("glitch");
+        safeMode.textContent = "🌸 Safe Mode";
+    } else {
+        document.body.classList.add("glitch");
+        safeMode.textContent = "👁 Safe Mode Off";
+    }
+
+});
+
+adoptButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        clicks++;
+
+        button.textContent = "💖 Adoption Pending";
+
+        // Stage 1
+        if (clicks >= 5) {
+
+            footer.textContent = "Made with l0ve ♡";
+
+        }
+
+        // Stage 2
+        if (clicks >= 10) {
+
+            title.textContent = "🐈 Whiskers & W0nders 🩷";
+
+            subtitle.textContent =
+                "Every kitten deserves a forever h0me.";
+
+        }
+
+        // Stage 3
+        if (clicks >= 15) {
+
+            document.body.classList.add("glitch");
+
+            kittens[0].querySelector("p").textContent =
+                "Loves waiting by the window every night.";
+
+        }
+
+        // Stage 4
+        if (clicks >= 20) {
+
+            kittens[1].querySelector("p").textContent =
+                "Professional nap expert. Hasn't slept since Tuesday.";
+
+            footer.textContent =
+                "Made with love ♡ please don't refresh.";
+
+        }
+
+        // Stage 5
+        if (clicks >= 25) {
+
+            title.textContent =
+                "👁 Whispers & Wanderers";
+
+            subtitle.textContent =
+                "Every visitor deserves a forever home.";
+
+        }
+
+        // Final Stage
+        if (clicks >= 30) {
+
+            footer.innerHTML =
+                "You adopted them.<br><br>They adopted you.";
+
+            kittens.forEach((kitten) => {
+
+                kitten.style.transform =
+                    "rotate(" + (Math.random() * 6 - 3) + "deg)";
+
+            });
+
+        }
+
+    });
+
+});
+
+// Tiny random glitches
+
+setInterval(() => {
+
+    if (clicks > 10 && !safe) {
+
+        const randomKitten =
+            kittens[Math.floor(Math.random() * kittens.length)];
+
+        randomKitten.classList.add("glitch");
+
+        setTimeout(() => {
+
+            randomKitten.classList.remove("glitch");
+
+        }, 300);
+
+    }
+
+}, 4000);
