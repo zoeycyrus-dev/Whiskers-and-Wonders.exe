@@ -157,3 +157,37 @@ popup.style.opacity=1;
 });
 
 });
+console.log(
+
+`
+
+██████╗
+
+WHISKERS & WONDERS
+
+Employee Login
+
+Status: ACTIVE
+
+Current kittens: 6
+
+Expected kittens: 6
+
+Detected kittens: 7
+
+`
+
+);
+let moonClicks=0;
+
+document.getElementById("moon").onclick=()=>{
+
+moonClicks++;
+
+if(moonClicks==7){
+
+window.location="lost.html";
+
+}
+
+};
