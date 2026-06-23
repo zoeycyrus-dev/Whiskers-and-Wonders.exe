@@ -121,3 +121,39 @@ setInterval(() => {
     }
 
 }, 4000);
+let clicks = 0;
+
+document.querySelectorAll("button").forEach(button => {
+
+button.addEventListener("click",()=>{
+
+clicks++;
+
+if(clicks==5){
+
+document.querySelector(".subtitle").textContent=
+"Every kitten deserves a forever hmoe.";
+
+}
+
+if(clicks==15){
+
+document.querySelector("h1").textContent=
+"Whispers & Wonders 💗";
+
+}
+
+if(clicks==30){
+
+document.body.style.filter="grayscale(setTimeout(()=>{
+
+const popup=document.getElementById("popup");
+
+popup.style.opacity=1;
+
+},45000);
+}
+
+});
+
+});
