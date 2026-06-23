@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Employee Login</title>
+
+<style>
+
+body{
+
+background:#fff5fb;
+
+font-family:sans-serif;
+
+text-align:center;
+
+padding-top:120px;
+
+}
+
+input{
+
+padding:15px;
+
+border-radius:15px;
+
+border:2px solid pink;
+
+margin:10px;
+
+}
+
+button{
+
+padding:15px;
+
+border:none;
+
+border-radius:15px;
+
+background:#ff92bf;
+
+color:white;
+
+}
+
+#log{
+
+margin-top:40px;
+
+white-space:pre-wrap;
+
+color:#666;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Employee Login</h1>
+
+<input placeholder="Username">
+
+<br>
+
+<input placeholder="Password" type="password">
+
+<br>
+
+<button onclick="login()">
+
+Login
+
+</button>
+
+<div id="log"></div>
+
+<script>
+
+function login(){
+
+document.getElementById("log").innerHTML=
+
+`
+
+ACCESS DENIED
+
+Current Kittens: 6
+
+Expected Kittens: 6
+
+Detected Kittens: 7
+
+Last Incident:
+
+DO NOT LET LUNA OUTSIDE AGAIN
+
+`;
+
+}
+
+</script>
+
+</body>
+
+</html>
