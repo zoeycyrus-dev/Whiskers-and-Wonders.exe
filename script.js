@@ -191,3 +191,108 @@ window.location="lost.html";
 }
 
 };
+document.getElementById("a1").innerHTML="✅ First Visitor";
+
+setTimeout(()=>{
+
+document.getElementById("a4").innerHTML="✅ Stayed 60 Seconds";
+
+showToast("🏆 Achievement Unlocked!");
+
+},60000);
+
+if(clicks>=10){
+
+document.getElementById("a2").innerHTML="✅ Clicked 10 Times";
+
+}
+const whispers=[
+
+"She's sleeping.",
+
+"Don't refresh.",
+
+"Did Luna move?",
+
+"Someone adopted you.",
+
+"Don't trust the visitor count.",
+
+"Count the paw prints."
+
+];
+
+setInterval(()=>{
+
+const box=document.getElementById("whisper");
+
+box.innerHTML=whispers[Math.floor(Math.random()*whispers.length)];
+
+box.style.opacity=.7;
+
+setTimeout(()=>{
+
+box.style.opacity=0;
+
+},3000);
+
+},25000);
+let visitors=18421;
+
+let adopted=18420;
+
+setInterval(()=>{
+
+visitors++;
+
+if(Math.random()>.75){
+
+adopted+=2;
+
+}else{
+
+adopted++;
+
+}
+
+document.getElementById("counter").innerHTML=
+
+"Visitors: "+visitors+
+
+"<br>Cats Adopted: "+adopted;
+
+},8000);
+let moon=0;
+
+document.getElementById("moon").onclick=()=>{
+
+moon++;
+
+if(moon==3){
+
+showToast("🌙 The moon smiles back.");
+
+}
+
+if(moon==7){
+
+window.location="lost.html";
+
+}
+
+};
+window.onload=()=>{
+
+setTimeout(()=>{
+
+document.getElementById("loading").style.opacity=0;
+
+setTimeout(()=>{
+
+document.getElementById("loading").remove();
+
+},1000);
+
+},1500);
+
+}
