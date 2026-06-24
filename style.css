@@ -422,3 +422,350 @@ z-index:99999;
 transition:1s;
 
 }
+/* ===========================
+   POPUP
+=========================== */
+
+#popup{
+
+position:fixed;
+
+bottom:20px;
+
+right:20px;
+
+background:white;
+
+padding:15px;
+
+border-radius:20px;
+
+opacity:0;
+
+transition:1s;
+
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+z-index:1000;
+
+}
+
+/* ===========================
+   MOON
+=========================== */
+
+#moon{
+
+position:fixed;
+
+top:20px;
+
+right:20px;
+
+font-size:40px;
+
+cursor:pointer;
+
+transition:.5s;
+
+z-index:1000;
+
+}
+
+#moon:hover{
+
+transform:scale(1.15) rotate(10deg);
+
+}
+
+/* ===========================
+   ACHIEVEMENTS
+=========================== */
+
+#achievementBox{
+
+position:fixed;
+
+left:15px;
+
+bottom:15px;
+
+background:white;
+
+padding:15px;
+
+border-radius:20px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+font-size:14px;
+
+width:200px;
+
+transition:.5s;
+
+z-index:999;
+
+}
+
+#achievementBox:hover{
+
+transform:scale(1.05);
+
+}
+
+#achievementBox h3{
+
+margin-bottom:10px;
+
+}
+
+#achievementBox ul{
+
+padding:0;
+
+margin:0;
+
+}
+
+#achievementBox li{
+
+list-style:none;
+
+padding:5px 0;
+
+color:#777;
+
+}
+
+/* ===========================
+   WHISPERS
+=========================== */
+
+#whisper{
+
+position:fixed;
+
+top:20%;
+
+left:50%;
+
+transform:translateX(-50%);
+
+opacity:0;
+
+font-size:26px;
+
+color:#ff6ba9;
+
+transition:2s;
+
+pointer-events:none;
+
+font-weight:bold;
+
+text-align:center;
+
+z-index:1500;
+
+text-shadow:2px 2px white;
+
+}
+
+/* ===========================
+   LOADING SCREEN
+=========================== */
+
+#loading{
+
+position:fixed;
+
+inset:0;
+
+background:#ffe6f3;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:40px;
+
+z-index:99999;
+
+transition:1s;
+
+}
+
+#loading p{
+
+font-size:18px;
+
+margin-top:20px;
+
+color:#ff75aa;
+
+}
+
+/* ===========================
+   VISITOR COUNTER
+=========================== */
+
+#counter{
+
+font-weight:bold;
+
+line-height:1.8;
+
+margin-bottom:15px;
+
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#fff5fb;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#ffb6d6;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#ff8fbe;
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:700px){
+
+h1{
+
+font-size:2.2rem;
+
+}
+
+.subtitle{
+
+font-size:1rem;
+
+}
+
+main{
+
+padding:20px;
+
+gap:20px;
+
+}
+
+.kitten{
+
+padding:20px;
+
+}
+
+#achievementBox{
+
+width:170px;
+
+font-size:12px;
+
+left:10px;
+
+bottom:10px;
+
+}
+
+#moon{
+
+font-size:32px;
+
+}
+
+#popup{
+
+right:10px;
+
+bottom:10px;
+
+max-width:220px;
+
+}
+
+#whisper{
+
+font-size:20px;
+
+padding:0 20px;
+
+}
+
+}
+
+/* ===========================
+   SECRET EFFECTS
+=========================== */
+
+body.glitch{
+
+filter:contrast(102%) saturate(105%);
+
+}
+
+body.glitch .kitten:nth-child(odd){
+
+transform:rotate(-0.5deg);
+
+}
+
+body.glitch .kitten:nth-child(even){
+
+transform:rotate(0.5deg);
+
+}
+
+body.glitch .sparkles{
+
+opacity:.7;
+
+animation-duration:18s;
+
+}
+
+/* ===========================
+   SMOOTH FADE
+=========================== */
+
+h1,
+.subtitle,
+.kitten,
+footer,
+#popup,
+#whisper,
+#achievementBox{
+
+transition:all .5s ease;
+
+}
