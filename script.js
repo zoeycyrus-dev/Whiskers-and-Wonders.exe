@@ -293,6 +293,158 @@ document.getElementById("loading").remove();
 
 },1000);
 
-},1500);
+},1500)
+const whispers = [
+    "She's sleeping.",
+    "Don't refresh.",
+    "Did Luna move?",
+    "Someone adopted you.",
+    "Don't trust the visitor count.",
+    "Count the paw prints.",
+    "Luna is watching.",
+    "Stay a little longer."
+];
+
+// Random whispers
+setInterval(() => {
+
+    if (clicks >= 10) {
+
+        const message =
+            whispers[Math.floor(Math.random() * whispers.length)];
+
+        showWhisper(message);
+
+    }
+
+}, 25000);
+
+// Popup after 45 seconds
+setTimeout(() => {
+
+    if (popup) {
+
+        popup.style.opacity = 1;
+
+        setTimeout(() => {
+
+            popup.style.opacity = 0;
+
+        }, 5000);
+
+    }
+
+}, 45000);
+
+// Fake visitor counter
+setInterval(() => {
+
+    visitors++;
+
+    if (Math.random() > 0.75) {
+
+        adopted += 2;
+
+    } else {
+
+        adopted++;
+
+    }
+
+    if (counter) {
+
+        counter.innerHTML =
+            "Visitors: " +
+            visitors +
+            "<br>Cats Adopted: " +
+            adopted;
+
+    }
+
+}, 8000);
+
+// Random kitten glitches
+setInterval(() => {
+
+    if (clicks >= 15 && !safe) {
+
+        const randomKitten =
+            kittens[Math.floor(Math.random() * kittens.length)];
+
+        randomKitten.classList.add("glitch");
+
+        setTimeout(() => {
+
+            randomKitten.classList.remove("glitch");
+
+        }, 350);
+
+    }
+
+}, 4000);
+
+// Moon easter egg
+if (moon) {
+
+    moon.addEventListener("click", () => {
+
+        moonClicks++;
+
+        if (moonClicks === 3) {
+
+            showWhisper("🌙 The moon smiles back.");
+
+            unlock("a3");
+
+        }
+
+        if (moonClicks === 7) {
+
+            window.location.href = "lost.html";
+
+        }
+
+    });
 
 }
+
+// Stayed 60 seconds achievement
+setTimeout(() => {
+
+    unlock("a4");
+
+    showWhisper("🏆 Achievement Unlocked");
+
+}, 60000);
+
+// Tiny creepy title flicker
+setInterval(() => {
+
+    if (clicks >= 20 && !safe) {
+
+        const original = title.textContent;
+
+        title.textContent = "👁 Whispers & Wonders";
+
+        setTimeout(() => {
+
+            title.textContent = original;
+
+        }, 500);
+
+    }
+
+}, 15000);
+
+// Secret console message
+console.log(`
+------------------------------------
+
+EMPLOYEE NOTE
+
+If Luna is looking at you,
+
+do not look back.
+
+------------------------------------
+`);
